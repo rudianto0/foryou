@@ -1,0 +1,217 @@
+:root {
+  --bg: #FDF6EC;
+  --bg-soft: #F9EBDC;
+  --accent: #E8A87C;
+  --accent-deep: #C97B4A;
+  --text: #5C4B3C;
+  --text-soft: #8A7767;
+  --quote: #B5838D;
+  --card: #FFFBF4;
+  --shadow: 0 12px 30px rgba(201, 123, 74, 0.16);
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --page-dur: 320ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+svg {
+  display: block;
+}
+
+/* ---------- Floating hearts background ---------- */
+.hearts-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart-float {
+  position: absolute;
+  bottom: -48px;
+  color: var(--accent);
+  opacity: 0;
+  animation: float-up var(--dur, 18s) linear var(--delay, 0s) infinite;
+}
+
+.heart-float svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(-8deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--op, 0.2);
+  }
+  85% {
+    opacity: var(--op, 0.2);
+  }
+  100% {
+    transform: translateY(calc(-100dvh - 120px)) rotate(14deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Sparkles ---------- */
+.sparkle {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+  animation: sparkle-pop 0.95s ease forwards;
+}
+
+.sparkle svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes sparkle-pop {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1) rotate(30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.15) rotate(80deg) translateY(-14px);
+    opacity: 0;
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 36px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  transition: transform 0.16s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--accent) 0%, #E5946A 100%);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(201, 123, 74, 0.35);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 14px 30px rgba(201, 123, 74, 0.45);
+}
+
+.btn--ghost {
+  border: 2px solid rgba(201, 123, 74, 0.5);
+  color: var(--accent-deep);
+  background: rgba(255, 251, 244, 0.7);
+}
+
+/* ---------- Music toggle ---------- */
+.music-toggle {
+  position: absolute;
+  top: calc(14px + env(safe-area-inset-top));
+  right: calc(16px + env(safe-area-inset-right));
+  z-index: 20;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--accent-deep);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s ease;
+}
+
+.music-toggle:active {
+  transform: scale(0.92);
+}
+
+.music-toggle svg {
+  width: 21px;
+  height: 21px;
+}
+
+.music-toggle .icon-muted {
+  display: none;
+}
+
+.music-toggle.is-muted .icon-note {
+  display: none;
+}
+
+.music-toggle.is-muted .icon-muted {
+  display: block;
+}
+
+.music-toggle:not(.is-muted) .icon-note {
+  animation: wiggle 2.6s ease-in-out infinite;
+  transform-origin: 50% 75%;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

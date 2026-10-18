@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "For You",
+    "recipient": "Lia",
+    "occasion": "Wisuda S2"
+  },
+  "opening": {
+    "headline": "Untuk Lia",
+    "subtext": "Sebuah cerita kecil, ditulis pelan-pelan, untuk orang yang istimewa.",
+    "buttonLabel": "Buka"
+  },
+  "pages": [
+    {
+      "id": "page-1",
+      "icon": "envelope",
+      "title": "Hai, Lia",
+      "paragraphs": [
+        "Ada banyak hal yang ingin aku sampaikan, tapi kata-kata sering datang terlambat.",
+        "Jadi aku menuliskannya di sini — agar tidak ada yang terlewat, dan kamu bisa membacanya kapan pun."
+      ]
+    },
+    {
+      "id": "page-2",
+      "icon": "cap",
+      "title": "Selamat, Lia",
+      "paragraphs": [
+        "Hari ini bukan sekadar hari kelulusan.",
+        "Ini tentang malam-malam panjang, revisi yang tak ada habisnya, dan lelah yang akhirnya berubah jadi senyum."
+      ],
+      "quote": "Selamat atas gelar S2-mu. Aku bangga — lebih dari yang bisa aku ucapkan."
+    },
+    {
+      "id": "page-3",
+      "icon": "star",
+      "title": "Kamu Hebat",
+      "paragraphs": [
+        "Bukan semua orang mampu bertahan sejauh ini. Kamu melakukannya dengan caramu sendiri — sabar, tenang, dan tidak pernah menyerah."
+      ],
+      "quote": "Gelar itu bukan hanya bukti kepintaranmu, tapi bukti ketangguhanmu."
+    },
+    {
+      "id": "page-4",
+      "icon": "heart",
+      "title": "Terima Kasih",
+      "paragraphs": [
+        "Terima kasih karena bersedia menerimaku kembali.",
+        "Aku tahu keputusan itu tidak mudah. Maka hari-hari yang kamu berikan, akan aku jaga sebaik mungkin."
+      ]
+    },
+    {
+      "id": "page-5",
+      "icon": "flower",
+      "title": "Kamu Mengisi",
+      "paragraphs": [
+        "Ada ruang kosong di hatiku — dan hanya kamu yang tahu cara mengisinya.",
+        "Sejak kamu kembali, ruang itu tidak lagi sepi."
+      ]
+    },
+    {
+      "id": "page-6",
+      "icon": "sun",
+      "title": "Ke Depan",
+      "paragraphs": [
+        "Semoga ini bukan akhir cerita kita, tapi halaman pertama dari bab yang baru.",
+        "Aku ingin ada di setiap wisuda berikutnya, di setiap mimpi berikutnya."
+      ]
+    }
+  ],
+  "music": {
+    "title": "Lihat Kebunku",
+    "src": "asset/lihat-kebunku.mp3"
+  },
+  "closing": {
+    "message": "Selamat wisuda, Lia. Dan terima kasih sudah kembali.",
+    "signature": "Rian Rudianto",
+    "replayLabel": "Baca lagi"
+  }
+}
